@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 //강의 26강
 //Application 저장소 예제
-@WebServlet("/Calc2")
-public class Calc2 extends HttpServlet {
+@WebServlet("/calc2-application")//소문자 쓸것!
+public class Calc2_Application extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
