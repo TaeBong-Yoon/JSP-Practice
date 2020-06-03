@@ -1,6 +1,8 @@
 package com.bong.web;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -36,6 +38,14 @@ public class Mvc3 extends HttpServlet {
 		//Page
 		
 		request.setAttribute("result", result);
+		
+		String[] names = {"james","tom"};
+		request.setAttribute("names", names);
+		
+		Map<String, Object> notice = new HashMap<String, Object>();
+		notice.put("id",1);
+		notice.put("title","EL is Good");
+		request.setAttribute("notice", notice);
 		
 		//47강 MVC model 2, EL(Expression Language)
 		//redirect : 작업한 내용과 상관없는 새로운 요청
