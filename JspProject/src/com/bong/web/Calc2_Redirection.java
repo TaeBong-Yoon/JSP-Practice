@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 
 //강의 33강 - Redirection
 //Redirection : 매우 중요!
-//강의 34강 - 동적인 페이지(서버 페이지)
+//
 
 @WebServlet("/calc2-redirection")
 public class Calc2_Redirection extends HttpServlet {
@@ -70,11 +70,17 @@ public class Calc2_Redirection extends HttpServlet {
 			Cookie valueCookie = new Cookie("value", String.valueOf(v));
 			Cookie opCookie = new Cookie("op", op);
 			
+//			어디서 사용할 것인지? ("/"), ("/notice/")
 			valueCookie.setPath("/calc2-cookie");
 			opCookie.setPath("/calc2-cookie");
 			
+//			언제까지 유지될 것인가?(만료날짜) setMaxAge(초,second)
 			valueCookie.setMaxAge(60*60*24);
+//			value의 쿠키는 브라우저가 닫혀도 만료날짜까지 유지된다.
+//			op의 쿠키는 브라우저가 닫히는 순간 사라진다.
 			
+			
+//			브라우저에 쿠키를 저장해준다.
 			response.addCookie(valueCookie);
 			response.addCookie(opCookie);
 			
