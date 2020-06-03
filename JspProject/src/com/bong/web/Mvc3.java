@@ -48,6 +48,10 @@ public class Mvc3 extends HttpServlet {
 		request.setAttribute("notice", notice);
 		
 		//47강 MVC model 2, EL(Expression Language)
+		//48강 EL의 데이터 저장소
+		//page -> request -> session -> application
+		//Scope의 사용법
+		
 		//redirect : 작업한 내용과 상관없는 새로운 요청
 		//forward : 현재 작업한 내용을 이어갈 수 있도록 공유
 		RequestDispatcher dispatcher = request.getRequestDispatcher("mvc3.jsp");
