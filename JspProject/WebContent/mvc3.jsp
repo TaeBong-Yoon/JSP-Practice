@@ -5,6 +5,7 @@
 <!-- 48강 EL의 데이터 저장소 -->
 <!-- page -> request -> session -> application -->
 <!-- Scope의 사용법 -->
+<!-- 49강 EL의 연산자 -->
 <!-- View -->
 <%
 pageContext.setAttribute("result","hello!");
@@ -21,6 +22,12 @@ pageContext.setAttribute("result","hello!");
 	${notice.title}<br >
 	${result}<br >
 	${param.n}<br >
-	${header.accept}
+	${header.accept}<br >
+	${param.n > 3}<br >
+	${param.n ge 3}<br > <!-- 49강 EL연산자 참조 >= 와 같다 -->
+	${empty param.n}<br > <!-- pram.n == null || param.n == '' 와 같다 -->
+	${empty param.n? 'n=empty' : param.n}<br >
+	
+	${param.n / 2}<br >
 </body>
 </html>
