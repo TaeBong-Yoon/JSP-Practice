@@ -1,5 +1,23 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<% 
+String url = "jdbc:mysql://localhost:3306/jsp";
+String sql = "SELECT * FROM persons";
+Connection con = DriverManager.getConnection(url,"root","111111");
+
+Statement st = con.createStatement();
+ResultSet rs = st.executeQuery(sql);
+%>
+
+
+    
+    
+    
 <!DOCTYPE html>
 <html>
 
@@ -259,3 +277,10 @@
     </body>
     
     </html>
+    
+    <%
+	rs.close();
+	st.close();
+	con.close();
+    
+    %>
